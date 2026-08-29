@@ -1,0 +1,9 @@
+streamlit>=1.36
+scikit-learn==1.6.1
+joblib
+pandas
+numpy
+scipy
+pillow
+huggingface_hub>=0.23
+tensorflow-cpu
