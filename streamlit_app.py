@@ -137,7 +137,7 @@ CATEGORY = {
 }
 
 
-@st.cache_resource(show_spinner=False)
+@st.cache_resource(show_spinner=False, max_entries=3)
 def get_module(project):
     """Download the model into apps/<project>/, then import the app module (gradio-stubbed)."""
     from huggingface_hub import hf_hub_download
