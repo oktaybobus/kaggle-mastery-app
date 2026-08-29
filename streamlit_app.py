@@ -206,9 +206,23 @@ with st.sidebar:
     st.markdown("[Models](https://huggingface.co/OKTAYBBS/kaggle-mastery-models) - "
                 "[GitHub](https://github.com/oktaybobus)")
 
+# The two CNN demos need TensorFlow, which is too heavy for the free tier;
+# they are showcased on their static page + notebook instead of run live here.
+CV_PROJECTS = {"aerial_cactus", "digit_recognizer"}
+
 title, kurl = TITLES[project]
 st.subheader(title)
 st.markdown(f"[View competition on Kaggle]({kurl})")
+
+if project in CV_PROJECTS:
+    space = f"https://huggingface.co/spaces/OKTAYBBS/kaggle-mastery-{project.replace('_', '-')}"
+    st.info(
+        "This is a convolutional neural network (Keras) demo. To keep the live app "
+        "fast and light, image models are not run here - explore the approach and "
+        "results on the project page, or run the notebook to try it end to end."
+    )
+    st.markdown(f"- [Project page / showcase]({space})\n- [Competition on Kaggle]({kurl})")
+    st.stop()
 
 with st.spinner("Loading model..."):
     try:

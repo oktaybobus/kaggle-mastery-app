@@ -6,4 +6,3 @@ numpy
 scipy
 pillow
 huggingface_hub>=0.23
-tensorflow-cpu
